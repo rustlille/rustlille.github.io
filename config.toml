@@ -1,3 +1,6 @@
+title = "Rust in Lille"
+description = "Le groupe Rust Lillois"
+default_language = "fr"
 # The URL the site will be built for
 base_url = "https://example.com"
 

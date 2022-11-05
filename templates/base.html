@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+{% block header %}
+<div class="navbar">
+    <ul>
+        <li><a href="./"> Accueil</a></li>
+        <li><a href="./about"> À propos</a></li>
+        <li><a href="./contact"> Contact</a></li>
+        <li><a href="./sponsor"> Sponsors</a></li>
+    </ul>
+</div>
+{% endblock header %}
+
+<div class="container">
+{% block content %}{% endblock content %}
+</div>
+{% block footer %}
+<footer>
+    <p>Rust Lille © 2022 </p>
+</footer>
+{% endblock footer %}
+</body>
+</html>
