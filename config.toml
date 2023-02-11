@@ -2,7 +2,7 @@ title = "Rust in Lille"
 description = "Le groupe Rust Lillois"
 default_language = "fr"
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://rustlille.github.io"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
