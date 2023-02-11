@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Rust Lille</title>
+    <link rel="stylesheet" href="{{ get_url(path="tailwind.min.css", trailing_slash=false) }}">
+    <link href='https://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet'>
 </head>
 
-<body>
+<body class="text-lg">
 {% block header %}
-<div class="navbar">
-    <ul>
-        <li><a href="./"> Accueil</a></li>
-        <li><a href="./about"> À propos</a></li>
-        <li><a href="./contact"> Contact</a></li>
-        <li><a href="./sponsor"> Sponsors</a></li>
-    </ul>
-</div>
+<header>
+    <nav class="shadow-lg">
+        <ul class="flex flex-row bg-teal-600 gap-5 py-4 px-6 text-xl">
+            <li><a class="text-black" href="/"> Accueil</a></li>
+            <li><a class="text-black" href="/contact"> Contact</a></li>
+            <li><a class="text-black" href="/sponsor"> Sponsors</a></li>
+            <li><a class="text-black" href="/about">À propos</a></li>
+        </ul>
+    </nav>
+</header>
 {% endblock header %}
+<div class="flex flex-col">
+    <div class="flex flex-row py-12 justify-center">
+        <div class="flex flex-col gap-5 w-[60vw]">
+            {% block content %}{% endblock content %}
+        </div>
 
-<div class="container">
-{% block content %}{% endblock content %}
+
+    </div>
+    {% block footer %}
+    <footer>
+        <div class="flex justify-center py-10">
+            <p>Rust Lille © 2022 </p>
+        </div>
+    </footer>
+    {% endblock footer %}
 </div>
-{% block footer %}
-<footer>
-    <p>Rust Lille © 2022 </p>
-</footer>
-{% endblock footer %}
 </body>
 </html>
