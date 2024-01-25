@@ -1,0 +1,48 @@
+@import "variables";
+@import "background.css";
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-color: $background-color;
+}
+* {
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+}
+h1, h2, h3, nav a {
+    font-family: Jura, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: $header-height;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    img {
+        margin: 0 1rem;
+        margin-bottom: 1.1rem;
+    }
+    nav {
+        height: 100%;
+        a {
+            margin: 0 1rem;
+            padding: 0 0.5rem;
+            line-height: $header-height;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                border-color: $rust-accent;
+            }
+        }
+    }
+}
+main {
+    padding: 2rem 5rem;
+}
+footer {
+    margin-top: 3rem;
+    height: $footer-height;
+}

@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rust Lille</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rust Lille</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap" rel="stylesheet">
+    </head>
 
-<body>
-{% block header %}
-<header>
-    <nav>
-        <ul>
-            <li><a href="/"> Accueil</a></li>
-            <li><a href="/contact"> Contact</a></li>
-            <li><a href="/sponsor"> Sponsors</a></li>
-            <li><a href="/about">À propos</a></li>
-        </ul>
-    </nav>
-</header>
-{% endblock header %}
-<div>
-    <div>
-        <div>
-            {% block content %}{% endblock content %}
-        </div>
-
-
-    </div>
-    {% block footer %}
-    <footer>
-        <div>
+    <body class="flex-column">
+        <div aria-hidden="true" class="stars"></div>
+        <div aria-hidden="true" class="nebulas"></div>
+        <header>
+            <nav class="flex flex-align-center">
+                <a href="/"> Accueil</a>
+                <a href="/contact"> Contact</a>
+                <img src="images/rustlille-logo.svg" />
+                <a href="/sponsor"> Sponsors</a>
+                <a href="/about">À propos</a>
+            </nav>
+        </header>
+        <main class="flex-fill">
+        </main>
+        <footer class="flex flex-align-center">
             <p>Rust Lille © 2024 </p>
-        </div>
-    </footer>
-    {% endblock footer %}
-</div>
-</body>
+        </footer>
+    </body>
 </html>
