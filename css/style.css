@@ -1,11 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 * {
-    font-family: 'Fira Sans', serif;
-}
-
-a {
-    @apply hover:underline text-sky-400
+    font-size: 16px;
+    font-family: Verdana;
 }

@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Rust Lille</title>
-    <link rel="stylesheet" href="{{ get_url(path="tailwind.min.css", trailing_slash=false) }}">
-    <link href='https://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet'>
 </head>
 
-<body class="text-lg">
+<body>
 {% block header %}
 <header>
-    <nav class="shadow-lg">
-        <ul class="flex flex-row bg-teal-600 gap-5 py-4 px-6 text-xl">
-            <li><a class="text-black" href="/"> Accueil</a></li>
-            <li><a class="text-black" href="/contact"> Contact</a></li>
-            <li><a class="text-black" href="/sponsor"> Sponsors</a></li>
-            <li><a class="text-black" href="/about">À propos</a></li>
+    <nav>
+        <ul>
+            <li><a href="/"> Accueil</a></li>
+            <li><a href="/contact"> Contact</a></li>
+            <li><a href="/sponsor"> Sponsors</a></li>
+            <li><a href="/about">À propos</a></li>
         </ul>
     </nav>
 </header>
 {% endblock header %}
-<div class="flex flex-col">
-    <div class="flex flex-row py-12 justify-center">
-        <div class="flex flex-col gap-5 w-[60vw]">
+<div>
+    <div>
+        <div>
             {% block content %}{% endblock content %}
         </div>
 
@@ -30,8 +28,8 @@
     </div>
     {% block footer %}
     <footer>
-        <div class="flex justify-center py-10">
-            <p>Rust Lille © 2022 </p>
+        <div>
+            <p>Rust Lille © 2024 </p>
         </div>
     </footer>
     {% endblock footer %}

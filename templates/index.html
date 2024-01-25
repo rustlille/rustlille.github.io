@@ -2,18 +2,18 @@
 
 {% block content %}
 <div>
-    <h1 class="text-3xl font-bold"> {{config.title}} </h1>
-    <p class="text-sm"> {{config.description}} </p>
+    <h1> {{config.title}} </h1>
+    <p> {{config.description}} </p>
 </div>
 
 {% set posts = get_section(path="blog/_index.md") %}
 
-<div id="posts" class="flex flex-col">
+<div id="posts">
     {% for post in posts.pages %}
-    <div class="flex flex-col p-4 space-y-4 my-4 bg-slate-100 rounded-md shadow-md">
-            <h2 class="text-black text-2xl font-bold">{{post.title}}</h2>
+    <div>
+            <h2>{{post.title}}</h2>
             {% if post.extra.splash %}
-            <img alt="Post thumbnail image" class="w-96" src="{{post.extra.splash}}"/>
+            <img alt="Post thumbnail image" src="{{post.extra.splash}}"/>
             {% endif %}
 
         {{ post.description | safe }}
@@ -21,7 +21,7 @@
             En savoir plus...
         </a>
         {% if post.extra.meetup %}
-        <a class="text-sky-400 hover:underline" href="{{post.extra.meetup.link}}"> Réserver une place pour le {{post.date}}</a>
+        <a href="{{post.extra.meetup.link}}"> Réserver une place pour le {{post.date}}</a>
         {% endif %}
     </div>
     {% endfor %}

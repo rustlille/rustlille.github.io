@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="flex flex-col gap-5">
-    <h1 class="text-2xl font-bold">{{ page.title }}</h1>
+<div>
+    <h1>{{ page.title }}</h1>
     {{ page.content | safe }}
 </div>
 
-<div class="flex flex-col gap-5">
+<div>
     {% if page.extra.host %}
-    <h2 class="text-xl font-bold">Venir</h2>
+    <h2>Venir</h2>
 
     <p>Réserver vite votre place sur <a href="{{page.extra.meetup.link}}">meetup.com</a>.</p>
 
