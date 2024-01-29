@@ -1,4 +1,6 @@
+@use 'sass:list';
 @import "variables";
+
 // Thanks to @screenshake (https://codepen.io/sarazond/pen/LYGbwj) for the inspiration
 @function multiple-box-shadow ($n) { 
     $value: '#{random(1000)/10}vw #{random(1000)/10}vh #FFF';
@@ -7,8 +9,37 @@
     }
     @return unquote($value)
 }
+@function generate_blobs ($n) {
+    $colors: rgba(123,115,214,0.6), rgba(28,151,190,0.6), rgba(44,159,147,0.3), rgba(245,184,149,0.3);
+
+    $value: '#{random(20)}vw #{random(50)}vh #{list.nth($colors, random(4))}';
+    @for $i from 2 through $n {
+        $value: '#{$value}, #{random(100)}vw #{random(100)}vh #{list.nth($colors,random(4))}';
+    }
+    @return unquote($value)
+}
+.blobs {
+
+    position: relative;
+
+    &:before, &:after {
+        display: block;
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        content: " ";
+        filter: blur(300px);
+        z-index: -1;
+    }
+    &:before {
+        box-shadow: generate_blobs(2);
+    }
+    &:after {
+        box-shadow: generate_blobs(2);
+    }
+}
 .stars {  
-    position: absolute;
+    position: fixed;
     top: $header-height;
     width: 1px;
     height: 1px;
@@ -21,5 +52,6 @@
         height: 3px;
         background: transparent;
         box-shadow: multiple-box-shadow(50);
+        filter: blur(1px);
     }
 }
