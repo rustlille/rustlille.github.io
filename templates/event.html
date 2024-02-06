@@ -2,21 +2,21 @@
 {% block content %}
 <div>
     <h1>{{ page.title }}</h1>
-    {{ page.content | safe }}
+    <pre>{{ page.content | safe }}</pre>
 </div>
 
+{% if page.extra.host %}
 <div>
-    {% if page.extra.host %}
     <h2>Venir</h2>
 
     <p>Réserver vite votre place sur <a href="{{page.extra.meetup.link}}">meetup.com</a>.</p>
 
     <p>Et venez nous retrouver dans les locaux de
-        <a href="{{page.extra.host.place}}">{{page.extra.host.name}}</a>
-        let {{page.extra.meetup.date}}
+    <a href="{{page.extra.host.place}}">{{page.extra.host.name}}</a>
+    let {{page.extra.meetup.date}}
     </p>
     {{page.extra.host.place|safe}}
-    {% endif %}
 </div>
+{% endif %}
 
 {% endblock content %}

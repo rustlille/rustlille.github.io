@@ -1,24 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="text-center blobs blobs-1">Venez explorer l'univers Rust avec nous</h1>
-<p class="text-medium text-center">
-Rust Lille est une association dédiée à l’animation de la
-communauté Rust autour de la métropole Lilloise. Nous
-organisons des meetups et workshops pour permettre à tous de
-découvrir et s’améliorer dans la pratique de Rust et du
-développement.
-</p>
+<section id="hero" class="padded">
+    <h1 class="text-center blobs blobs-1">Venez explorer l'univers Rust avec nous</h1>
+    <p class="text-medium text-center">
+    Rust Lille est une association dédiée à l’animation de la
+    communauté Rust autour de la métropole Lilloise. Nous
+    organisons des meetups et workshops pour permettre à tous de
+    découvrir et s’améliorer dans la pratique de Rust et du
+    développement.
+    </p>
+</section>
+{% set events = get_section(path="events/_index.md") %}
 
-{% set posts = get_section(path="blog/_index.md") %}
-
-<div id="posts">
-    {% for post in posts.pages %}
-    <div>
-        <h2>{{post.title}}</h2>
-        {% if post.extra.splash %}
-        <img alt="Post thumbnail image" src="{{post.extra.splash}}"/>
-        {% endif %}
+<section id="events" class="padded">
+    <h2>Évènements à venir</h2>
+    <div id="event-carousel">
+        <div>
+            {% for event in events.pages %}
+            {% include "partials/event.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
         {{ post.description | safe }}
         <a href="{{post.permalink}}">

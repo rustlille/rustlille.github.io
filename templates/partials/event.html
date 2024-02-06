@@ -1,0 +1,14 @@
+<div class="card event">
+    <h3>{{event.title}}</h3>
+    {% if event.extra.splash %}
+    <img alt="event thumbnail image" src="{{event.extra.splash}}"/>
+    {% endif %}
+
+    <p>{{ event.description | safe }}</p>
+    <a href="{{event.permalink}}">
+        En savoir plus...
+    </a>
+    {% if event.extra.meetup %}
+    <a href="{{event.extra.meetup.link}}"> Réserver une place pour le {{event.date}}</a>
+    {% endif %}
+</div>
