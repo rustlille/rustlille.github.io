@@ -1,0 +1,7 @@
+$smBreakpoint: 768px;
+
+@mixin breakpoint-medium {
+     @media only screen and (min-width: $smBreakpoint){
+          @content
+     }
+}

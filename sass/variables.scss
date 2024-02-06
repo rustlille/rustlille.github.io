@@ -1,0 +1,13 @@
+@import "breakpoints";
+
+:root {
+    --header-height: 4rem;
+    --footer-height: 4rem;
+    --accent-color: #CE522B;
+    --bg-color: #0C0A21;
+
+    @include breakpoint-medium {
+        --header-height: 6rem;
+        --footer-height: 6rem;
+    }
+}

@@ -1,5 +1,4 @@
 @use 'sass:list';
-@import "variables";
 
 // Thanks to @screenshake (https://codepen.io/sarazond/pen/LYGbwj) for the inspiration
 @function multiple-box-shadow ($n) { 
@@ -28,7 +27,7 @@
         width: 300px;
         height: 300px;
         content: " ";
-        filter: blur(300px);
+        filter: blur(600px);
         z-index: -1;
     }
     &:before {
@@ -40,7 +39,7 @@
 }
 .stars {  
     position: fixed;
-    top: $header-height;
+    top: var(--header-height);
     width: 1px;
     height: 1px;
     background: transparent;

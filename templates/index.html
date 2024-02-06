@@ -24,15 +24,30 @@
     </div>
 </section>
 
-        {{ post.description | safe }}
-        <a href="{{post.permalink}}">
-            En savoir plus...
-        </a>
-        {% if post.extra.meetup %}
-        <a href="{{post.extra.meetup.link}}"> Réserver une place pour le {{post.date}}</a>
-        {% endif %}
+<section id="contact" class="grid padded">
+    <h2>Contact</h2>
+    <div class="card">
+        <h3>Discord</h3>
+        <p>FOOBAR</p>
+        <button type="button">FOOBAR</button>
     </div>
-    {% endfor %}
-</div>
+    <div class="card">
+        <h3>Discord</h3>
+        <p>FOOBAR</p>
+        <button type="button">FOOBAR</button>
+    </div>
+    <div class="card">
+        <h3>Discord</h3>
+        <p>FOOBAR</p>
+        <button type="button">FOOBAR</button>
+    </div>
+</section>
+
+<section id="about" class="padded">
+    <h2>À propos</h2>
+    Rust Lille est une association de loi 1901 dont le but est de promovoir le
+    langage Rust et la programmation logicielle à travers l'organisation de
+    talks et de workshops dans la métropole Lilloise
+</section>
 {% endblock content %}
 

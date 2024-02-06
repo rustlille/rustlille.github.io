@@ -2,25 +2,46 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Rust Lille</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="fonts.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="index.js" defer></script>
     </head>
 
     <body class="flex-column">
         <div aria-hidden="true" class="stars"></div>
         <header>
-            <nav class="flex flex-align-center">
+            <nav id="nav" class="flex flex-align-center">
                 <a href="/"> Accueil</a>
-                <a href="/contact"> Contact</a>
-                <img src="images/rustlille-logo.svg" />
-                <a href="/sponsor"> Sponsors</a>
-                <a href="/about">À propos</a>
+                <a href="#contact">Contact</a>
+                <img class="logo" src="images/rustlille-logo.svg" />
+                <a href="#sponsors">Sponsors</a>
+                <a href="#about">À propos</a>
             </nav>
+            <div id="header-mobile">
+                <button type="button" id="open-mobile-nav"><span class="icon-burger"></span></button>
+                <img class="logo" src="images/rustlille-logo.svg" />
+            </div>
         </header>
+        <div id="nav-mobile">
+            <button type="button" id="close-mobile-nav">
+                <span class="icon-xmark"></span>
+            </button>
+            <a href="/"> Accueil</a>
+            <a href="#contact">Contact</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#about">À propos</a>
+            <div class="socials">
+                <button type="button"><span class="icon-twitter"></span></button>
+                <button type="button"><span class="icon-youtube"></span></button>
+                <button type="button"><span class="icon-meetup"></span></button>
+                <button type="button"><span class="icon-github"></span></button>
+            </div>
+        </div>
         <main class="flex-fill">
             {% block content %} {% endblock %}
         </main>

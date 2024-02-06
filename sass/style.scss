@@ -1,53 +1,134 @@
 @import "variables";
+@import "headers";
 @import "background";
 @import "utilities";
 
-body {
-    padding: 0;
-    margin: 0;
-    min-height: 100vh;
-    background-color: $background-color;
-}
-* {
+html {
     font-size: 16px;
     font-family: sans-serif;
     color: white;
 }
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+h2 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
     font-weight: 600;
 }
 h1, h2, h3, nav a {
     font-family: Jura, sans-serif;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    height: $header-height;
-    border-bottom: 1px solid rgba(255,255,255,0.25);
-    img {
-        margin: 0 1rem;
-        margin-bottom: 1.1rem;
+[class^="icon-"], [class*=" icon-"] {
+    color: white;
+    font-size: 32px;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+main {
+    > section {
+        margin-top: 6rem;
+        &.padded {
+            padding: 0 1rem;
+        }
     }
-    nav {
-        height: 100%;
-        a {
-            margin: 0 1rem;
-            padding: 0 0.5rem;
-            line-height: $header-height;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            &:hover {
-                border-color: $rust-accent;
-            }
+
+    @include breakpoint-medium {
+        > section.padded {
+            padding: 0 2rem;
         }
     }
 }
-main {
-    padding: 2rem 5rem;
+
+@include breakpoint-medium {
+    #hero {
+        margin: 10rem 0;
+        h1 {
+            font-size: 3rem;
+        }
+    }
+    #events {
+        padding: none; // Cancel padding starting medium size for a nice scrollbar
+    }
 }
+
+#event-carousel {
+    white-space: nowrap;
+    text-align: center;
+    overflow: auto;
+
+    .event {
+        height: 300px;
+
+        img {
+            margin: 0;
+            max-width: 100%;
+        }
+
+        @include breakpoint-medium {
+            width: 400px;
+            height: 600px;
+        }
+    }
+
+}
+#event-carousel, #contact {
+    text-align: center;
+    word-break: break-all;
+
+    .card {
+        max-width: 90vw;
+        margin: 2rem auto;
+        overflow: hidden;
+        text-align: initial;
+        @include breakpoint-medium {
+            display: inline-block;
+            margin: 0 1rem;
+            padding: 1rem;
+            word-break: break-word;
+            white-space: initial;
+        }
+    }
+}
+
+#contact .card {
+    @include breakpoint-medium {
+        width: 200px;
+    }
+}
+.card {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.50);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.3);
+
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 12px 0 rgba(0,0,0,0.3);
+    }
+}
+
+#about {
+    text-align: center;
+}
+
 footer {
     margin-top: 3rem;
-    height: $footer-height;
+    height: var(--footer-height);
 }
