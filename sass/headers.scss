@@ -8,11 +8,8 @@ header {
     background: inherit;
     z-index: 10;
     overflow: hidden;
-    box-sizing: border-box;
 
     .logo {
-        display: block;
-        margin: auto;
         max-height: 60%;
     }
 }
@@ -36,15 +33,25 @@ nav a {
     align-items: center;
     justify-content: center;
     height: 100%;
+    .logo {
+        display: block;
+        margin: auto;
+    }
 }
 #nav {
+    height: 100%;
     a {
-        padding: 0 0.5rem;
+        font-size: 1.2rem;
+        padding: 0 1rem;
         line-height: var(--header-height);
         border-bottom: 2px solid transparent;
         &:hover {
             border-color: var(--accent-color);
         }
+    }
+    .logo {
+        margin: 0 2rem;
+        margin-top: -22px;
     }
 }
 #nav-mobile {
@@ -52,7 +59,7 @@ nav a {
     width: 250px;
     height: 100%;
     max-width: 70vw;
-    padding-top: 4rem;
+    padding-top: 6rem;
     font-size: 2rem;
     background-color: var(--bg-color);
     z-index: 11;
@@ -69,6 +76,11 @@ nav a {
     a {
         display: block;
         color: white;
+        padding-left: 1rem;
+        margin-bottom: 1em;
+    }
+    .socials {
+        text-align: center;
     }
 }
 #open-mobile-nav {

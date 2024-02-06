@@ -45,12 +45,6 @@ main {
             padding: 0 1rem;
         }
     }
-
-    @include breakpoint-medium {
-        > section.padded {
-            padding: 0 2rem;
-        }
-    }
 }
 
 @include breakpoint-medium {
@@ -61,11 +55,12 @@ main {
         }
     }
     #events {
-        padding: none; // Cancel padding starting medium size for a nice scrollbar
+        padding: 0; // Cancel padding starting medium size for a nice scrollbar
     }
 }
 
 #event-carousel {
+    padding: 1rem 0;
     white-space: nowrap;
     text-align: center;
     overflow: auto;
