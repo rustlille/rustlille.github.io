@@ -1,4 +1,6 @@
 @import "background";
+@import "breakpoints";
+
 html {
     font-size: 16px;
     font-family: sans-serif;
@@ -21,8 +23,12 @@ h2 {
     font-size: 2rem;
     font-weight: 600;
 }
-h1, h2, h3, nav a {
+h1, h2, h3, a {
     font-family: Jura, sans-serif;
+    color: white;
+}
+a {
+    text-decoration: none;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -37,6 +43,7 @@ button {
 main {
     > section {
         margin-top: 6rem;
+        padding: 0 1rem;
     }
 }
 
@@ -82,7 +89,17 @@ footer {
     align-items: center;
     justify-content: center;
 }
-.max-width-md {
+.mobile-only {
+    @include breakpoint-medium {
+        display: none;
+    }
+}
+.desktop-only {
+    @include breakpoint-mobile {
+        display: none;
+    }
+}
+.max-width-md{
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;

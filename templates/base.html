@@ -14,34 +14,36 @@
 
     <body class="flex-column">
         <div aria-hidden="true" class="stars"></div>
-        <header>
-            <nav id="nav" class="flex flex-align-center">
+        <header class="flex flex-align-center">
+            <!-- Desktop Menu -->
+            <nav id="nav-desktop-1" class="flex desktop-only">
                 <a href="/"> Accueil</a>
                 <a href="#contact">Contact</a>
-                <img class="logo" src="images/rustlille-logo.svg" />
+            </nav>
+            <!-- Logo appears right in the middle -->
+            <img class="logo" src="images/rustlille-logo.svg" />
+            <nav id="nav-desktop-2" class="flex desktop-only">
                 <a href="#sponsors">Sponsors</a>
                 <a href="#about">À propos</a>
             </nav>
-            <div id="header-mobile">
-                <button type="button" id="open-mobile-nav"><span class="icon-burger"></span></button>
-                <img class="logo" src="images/rustlille-logo.svg" />
+
+            <div class="desktop-only align-right">
+                {% include "partials/socials.html" %}
             </div>
+
+            <!-- Mobile Menu -->
+            <input type="checkbox" id="mobile-menu-toggle" class="mobile-only" />
+            <label for="mobile-menu-toggle" id="mobile-menu" class="align-right mobile-only">
+                <span class="toggle-icon"></span>
+                <nav id="nav-mobile" class="mobile-only">
+                    <a href="/"> Accueil</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#sponsors">Sponsors</a>
+                    <a href="#about">À propos</a>
+                    {% include "partials/socials.html" %}
+                </nav>
+            </label>
         </header>
-        <nav id="nav-mobile">
-            <button type="button" id="close-mobile-nav">
-                <span class="icon-xmark"></span>
-            </button>
-            <a href="/"> Accueil</a>
-            <a href="#contact">Contact</a>
-            <a href="#sponsors">Sponsors</a>
-            <a href="#about">À propos</a>
-            <div class="socials">
-                <button type="button"><span class="icon-twitter"></span></button>
-                <button type="button"><span class="icon-youtube"></span></button>
-                <button type="button"><span class="icon-meetup"></span></button>
-                <button type="button"><span class="icon-github"></span></button>
-            </div>
-        </nav>
         <main class="flex-fill">
             {% block content %} {% endblock %}
         </main>
