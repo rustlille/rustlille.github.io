@@ -20,7 +20,7 @@ header {
 .anchor {
     // Compensate for fixed header height on anchors
     padding-top: var(--header-height);
-    margin-top: -var(--height-height);
+    margin-top: calc(-1 * var(--height-height));
 }
 
 nav a {
