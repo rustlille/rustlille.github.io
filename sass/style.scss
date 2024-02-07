@@ -14,19 +14,19 @@
     overflow: auto;
 
     .event {
-        height: 300px;
-
         img {
             margin: 0;
             max-width: 100%;
         }
 
-        @include breakpoint-medium {
-            width: 400px;
-            height: 600px;
-        }
     }
 
+    @include breakpoint-medium {
+        .event {
+            width: 400px;
+            height: 500px;
+        }
+    }
 }
 #event-carousel, #contact {
     text-align: center;
