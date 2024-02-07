@@ -1,12 +1,14 @@
 @import "variables";
 @import "theme";
 @import "headers";
-@include breakpoint-medium {
-    #events {
-        padding: 0; // Cancel padding starting medium size for a nice scrollbar
+
+#events {
+    @include breakpoint-medium {
+        // Cancel padding starting medium size for a nice scrollbar
+        padding-left: 0;
+        padding-right: 0;
     }
 }
-
 #event-carousel {
     padding: 1rem 0;
     white-space: nowrap;
