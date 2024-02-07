@@ -9,34 +9,36 @@ header {
     z-index: 10;
 
     .logo {
+        margin: 0 2rem;
         max-height: 60%;
     }
     .align-right {
         position: absolute;
-        right: 2rem;
+        right: 1.2rem;
     }
 }
-
 .anchor {
     // Compensate for fixed header height on anchors
     padding-top: var(--header-height);
     margin-top: -var(--height-height);
 }
 
-#nav {
+nav a {
+    transition: background,border 0.5s ease;
+    &:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
+}
+#nav-desktop {
     height: 100%;
     a {
+        display: inline-block;
+        height: 100%;
+        width: 7em;
+        text-align:center;
         font-size: 1.2rem;
-        padding: 0 1rem;
+        box-sizing: border-box;
         line-height: var(--header-height);
-        border-bottom: 2px solid transparent;
-        &:hover {
-            border-color: var(--accent-color);
-        }
-    }
-    .logo {
-        margin: 0 2rem;
-        margin-top: -22px;
     }
 }
 #nav-mobile {
@@ -54,20 +56,16 @@ header {
 
     > a {
         display: block;
+        padding: 1.5em 0;
         padding-right: 2rem;
-        margin-bottom: 1em;
         text-align: right;
-        border-right: 2px solid rgba(0,0,0,0);
-
-        &:hover {
-            border-color: var(--accent-color);
-        }
         &:first-child {
             margin-top: 2em;
         }
     }
 
     .socials {
+        margin-top: 1em;
         text-align: center;
     }
 }
@@ -79,6 +77,8 @@ header {
     position: relative;
     width: 24px;
     height: 24px;
+    cursor: pointer;
+
     &:before, &:after {
         position: absolute;
         display: block;
