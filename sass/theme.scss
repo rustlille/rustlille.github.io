@@ -27,11 +27,12 @@ h3 {
     font-size: 1.5rem;
 }
 
-h1, h2, h3, a {
+h1, h2, h3 {
     font-family: Jura, sans-serif;
     color: white;
 }
 a {
+    color: white;
     text-decoration: none;
 }
 
@@ -68,19 +69,20 @@ footer {
     &:hover {
         box-shadow: 0 0 12px 0 rgba(0,0,0,0.3);
     }
+    h3 {
+        margin: 0;
+    }
 }
 
 .button {
-    color: white;
-    background-color: var(--accent-color);
+    display: inline-block;
     padding: 0.5rem 1em;
-    border-radius: 0.5em;
     text-align: center;
     font-family: inherit;
-
-    > a {
-        font: inherit;
-    }
+    color: white;
+    border-radius: 0.5em;
+    background-color: var(--accent-color);
+    box-sizing: border-box;
 
     &:hover {
         filter: brightness(85%);
