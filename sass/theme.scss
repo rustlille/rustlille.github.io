@@ -54,7 +54,7 @@ footer {
 
 // Components
 .card {
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     background-color: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.50);
     border-radius: 1rem;
@@ -63,11 +63,27 @@ footer {
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.3);
 
     &:hover {
-        transform: scale(1.01);
         box-shadow: 0 0 12px 0 rgba(0,0,0,0.3);
     }
 }
 
+.button {
+    color: white;
+    background-color: var(--accent-color);
+    padding: 0.5rem 1em;
+    border-radius: 0.5em;
+    text-align: center;
+    font-family: inherit;
+
+    > a {
+        font: inherit;
+    }
+
+    &:hover {
+        filter: brightness(85%);
+        box-shadow: 0 0 8px 0 rgba(0,0,0,0.3);
+    }
+}
 // Utility Classes
 .text-center {
     text-align: center;
@@ -82,9 +98,12 @@ footer {
     display: flex;
     flex-direction: column;
 }
-.flex-align-center {
+.flex-center {
     align-items: center;
     justify-content: center;
+}
+.flex-wrap {
+    flex-wrap: wrap;
 }
 .mobile-only {
     @include breakpoint-medium {
