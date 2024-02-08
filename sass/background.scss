@@ -8,33 +8,34 @@
     }
     @return unquote($value)
 }
+
+// In case you ever need to generate some fresh colors
 @function generate_blobs ($n) {
     $colors: rgba(123,115,214,0.6), rgba(28,151,190,0.6), rgba(44,159,147,0.3), rgba(245,184,149,0.3);
 
-    $value: '#{random(20)}vw #{random(50)}vh #{list.nth($colors, random(4))}';
+    $value: '#{random(100)}vw #{random(100)}vh #{list.nth($colors, random(4))}';
     @for $i from 2 through $n {
         $value: '#{$value}, #{random(100)}vw #{random(100)}vh #{list.nth($colors,random(4))}';
     }
     @return unquote($value)
 }
 .blobs {
+    position: fixed;
+    z-index: -1;
 
-    position: relative;
-
-    &:before, &:after {
+    &:before {
         display: block;
         position: absolute;
-        width: 300px;
-        height: 300px;
+        width: 600px;
+        height: 500px;
         content: " ";
-        filter: blur(600px);
-        z-index: -1;
-    }
-    &:before {
-        box-shadow: generate_blobs(2);
-    }
-    &:after {
-        box-shadow: generate_blobs(2);
+        opacity: 0.6;
+        filter: blur(1000px);
+        border-radius: 100%;
+        box-shadow: 48vw 49vh rgba(245,184,149,.3), 17vw 48vh
+        rgba(28,151,190,.6), 23vw 15vh rgba(28,151,190,.6), 69vw 18vh
+        rgba(123,115,214,.6), 34vw 35vh rgba(28,151,190,.6); mix-blend-mode:
+        multiply;
     }
 }
 .stars {  
