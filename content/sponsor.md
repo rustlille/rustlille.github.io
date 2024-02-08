@@ -1,5 +1,0 @@
-+++
-title = "Sponsor"
-+++
-
-Placeholder
