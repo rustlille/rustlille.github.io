@@ -82,8 +82,9 @@ footer {
     font-family: inherit;
     color: white;
     border-radius: 0.5em;
-    background-color: var(--accent-color);
+    background-color: var(--accent-darker);
     box-sizing: border-box;
+    cursor: pointer;
 
     &:hover {
         filter: brightness(115%);

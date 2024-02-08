@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-     <meta name="description" content="Rust Lille organise des évènements (talks, workshops) autour du langage Rust dans la métropole Lilloise">
+        <meta name="description" content="Rust Lille organise des évènements (talks, workshops) autour du langage Rust dans la métropole Lilloise">
         <title>Rust Lille</title>
+        <link rel="icon" href="data:,">
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="fonts.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +18,12 @@
         <div aria-hidden="true" class="stars"></div>
         <div aria-hidden="true" class="blobs"></div>
         <header class="flex flex-center">
-        {% include "partials/header.html" %}
+            {% include "partials/header.html" %}
         </header>
         <main>
             {% block content %} {% endblock %}
             <footer class="flex-column flex-center">
-            {%include "partials/footer.html" %}
+                {%include "partials/footer.html" %}
             </footer>
         </main>
     </body>
