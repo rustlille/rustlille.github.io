@@ -2,8 +2,7 @@
 @import "breakpoints";
 
 html {
-    font-size: 16px;
-    font-family: sans-serif;
+    font: normal 400 16px sans-serif;
     color: white;
 }
 body {
@@ -14,14 +13,12 @@ body {
 }
 h1 {
     font-size: 2rem;
-    font-weight: 600;
     text-align: center;
 }
 h2 {
     margin-top: 2rem;
     text-align: center;
     font-size: 1.75rem;
-    font-weight: 600;
 }
 h3 {
     font-size: 1.5rem;
@@ -29,6 +26,7 @@ h3 {
 
 h1, h2, h3 {
     font-family: Jura, sans-serif;
+    font-weight: 600;
     color: white;
 }
 a {
