@@ -1,0 +1,131 @@
+@import "background";
+@import "breakpoints";
+
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+}
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+h2 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+h1, h2, h3 {
+    font-family: Jura, sans-serif;
+    color: white;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    color: white;
+    font-size: 1em;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+main {
+    height: calc(100vh - var(--header-height));
+    overflow: auto;
+    > section {
+        margin-top: 3rem;
+        padding: 0 1rem;
+    }
+}
+
+footer {
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+// Components
+.card {
+    padding: 1rem;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.50);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease-out;
+    backdrop-filter: blur(5px);
+
+    &:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.1)
+    }
+    h3 {
+        margin: 0;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1em;
+    text-align: center;
+    font-family: inherit;
+    color: white;
+    border-radius: 0.5em;
+    background-color: var(--accent-color);
+    box-sizing: border-box;
+
+    &:hover {
+        filter: brightness(85%);
+        box-shadow: 0 0 8px 0 rgba(0,0,0,0.3);
+    }
+}
+// Utility Classes
+.text-center {
+    text-align: center;
+}
+.text-medium {
+    font-size: 1.2rem;
+}
+.flex {
+    display: flex;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.mobile-only {
+    @include breakpoint-medium {
+        display: none;
+    }
+}
+.desktop-only {
+    @include breakpoint-mobile {
+        display: none;
+    }
+}
+.max-width-md{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}

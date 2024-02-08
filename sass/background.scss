@@ -1,0 +1,57 @@
+@use 'sass:list';
+
+// Thanks to @screenshake (https://codepen.io/sarazond/pen/LYGbwj) for the inspiration
+@function multiple-box-shadow ($n) { 
+    $value: '#{random(1000)/10}vw #{random(1000)/10}vh #FFF';
+    @for $i from 2 through $n {
+        $value: '#{$value}, #{random(1000)/10}vw #{random(1000)/10}vh #FFF';
+    }
+    @return unquote($value)
+}
+
+// In case you ever need to generate some fresh colors
+@function generate_blobs ($n) {
+    $colors: rgba(123,115,214,0.6), rgba(28,151,190,0.6), rgba(44,159,147,0.3), rgba(245,184,149,0.3);
+
+    $value: '#{random(100)}vw #{random(100)}vh #{list.nth($colors, random(4))}';
+    @for $i from 2 through $n {
+        $value: '#{$value}, #{random(100)}vw #{random(100)}vh #{list.nth($colors,random(4))}';
+    }
+    @return unquote($value)
+}
+.blobs {
+    position: fixed;
+    z-index: -1;
+
+    &:before {
+        display: block;
+        position: absolute;
+        width: 80vw;
+        height: 60vh;
+        content: " ";
+        opacity: 0.6;
+        filter: blur(100px);
+        border-radius: 100%;
+        box-shadow: 48vw 49vh rgba(245,184,149,.4),17vw 38vh
+        rgba(28,151,190,.3),23vw 5vh rgba(28,151,190,.4),69vw 8vh
+        rgba(123,115,214,.6),34vw 35vh rgba(28,151,190,.3);
+    }
+}
+.stars {  
+    position: fixed;
+    top: var(--header-height);
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(100);
+    z-index: -1;
+    &:after {
+        display: block;
+        content: " ";
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: multiple-box-shadow(50);
+        filter: blur(1px);
+    }
+}

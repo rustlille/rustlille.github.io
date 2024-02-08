@@ -1,30 +1,70 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-    <h1 class="text-3xl font-bold"> {{config.title}} </h1>
-    <p class="text-sm"> {{config.description}} </p>
-</div>
+<section id="hero" class="max-width-md">
+    <h1 class="text-center">Explorez l'univers Rust avec nous</h1>
+    <p class="text-medium text-center">
+    Rust Lille est une association dédiée à l’animation de la
+    communauté Rust autour de la métropole Lilloise. Nous
+    organisons des meetups et workshops pour permettre à tous de
+    découvrir et s’améliorer dans la pratique de Rust et du
+    développement.
+    </p>
+</section>
+{% set events = get_section(path="events/_index.md") %}
 
-{% set posts = get_section(path="blog/_index.md") %}
-
-<div id="posts" class="flex flex-col">
-    {% for post in posts.pages %}
-    <div class="flex flex-col p-4 space-y-4 my-4 bg-slate-100 rounded-md shadow-md">
-            <h2 class="text-black text-2xl font-bold">{{post.title}}</h2>
-            {% if post.extra.splash %}
-            <img alt="Post thumbnail image" class="w-96" src="{{post.extra.splash}}"/>
-            {% endif %}
-
-        {{ post.description | safe }}
-        <a href="{{post.permalink}}">
-            En savoir plus...
-        </a>
-        {% if post.extra.meetup %}
-        <a class="text-sky-400 hover:underline" href="{{post.extra.meetup.link}}"> Réserver une place pour le {{post.date}}</a>
-        {% endif %}
+<section id="events" class="text-center">
+    <h2>Évènements à venir</h2>
+    {% set eventCount = events.pages | length %}
+    {% if eventCount > 0 %}
+    <div id="event-carousel">
+        <div>
+            {% for event in events.pages %}
+            {% include "partials/event.html" %}
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
-</div>
+    {% else %}
+    <p>On est encore en train de préparer notre prochain évènement ! Stay tuned !
+    {% endif %}
+</section>
+
+<section id="sponsors" class="text-center max-width-md">
+    <h2>Sponsors</h2>
+    <div class="card">
+        <p>
+        Faire un don à l'association Rust Lille, c'est nous permettre de continuer
+        à vous organiser des évènement toujours plus qualitatifs ! <br />
+        Vos dons sont utilisés pour l'organisation des activités de l'association:
+        <br /><br />
+        Apéritifs<br />
+        Frais de déplacement des speakers<br />
+        Location de locaux<br />
+        Goodies (stickers,….)<br />
+        <br /><br />
+        Les membres de Rust Lille sont bénévoles et ne sont pas rémunérés.<br />
+        Si vous souhaitez nous aider, vous pouvez faire un don à l'association en suivant ce lien:
+        </p>
+        <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/rust-lille/formulaires/1/widget-bouton" style="width: 100%; height: 70px; border: none;"></iframe>
+    </div>
+</section>
+
+<section id="contact" class="max-width-md">
+    <h2>Contact</h2>
+    <div class="flex flex-wrap flex-center">
+        <div class="card flex-column discord">
+            <span class="icon-discord"></span>
+            <h3>Discord</h3>
+            <p>Rejoignez la communauté sur Discord et contactez l'organisation</p>
+            <a class="button" href="https://discord.gg/2hyqqzpbDc" target="_blank">Rejoindre</a>
+        </div>
+        <div class="card flex-column twitter">
+            <span class="icon-twitter"></span>
+            <h3>Twitter</h3>
+            <p>Rust Lille est aussi sur Twitter !</p>
+            <a class="button" href="https://twitter.com/@rustlille" target="_blank">@rustlille</a>
+        </div>
+    </div>
+</section>
 {% endblock content %}
 
