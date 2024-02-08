@@ -15,8 +15,8 @@
 
 <section id="events" class="text-center">
     <h2>Évènements à venir</h2>
-    {% set events = events.pages | length %}
-    {% if events > 0 %}
+    {% set eventCount = events.pages | length %}
+    {% if eventCount > 0 %}
     <div id="event-carousel">
         <div>
             {% for event in events.pages %}
