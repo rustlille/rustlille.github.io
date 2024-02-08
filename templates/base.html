@@ -20,9 +20,9 @@
         </header>
         <main>
             {% block content %} {% endblock %}
+            <footer class="flex-column flex-center">
+            {%include "partials/footer.html" %}
+            </footer>
         </main>
-        <footer class="flex-column flex-center">
-        {%include "partials/footer.html" %}
-        </footer>
     </body>
 </html>
