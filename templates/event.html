@@ -13,7 +13,7 @@
 
     <p>Et venez nous retrouver dans les locaux de
     <a href="{{page.extra.host.place}}">{{page.extra.host.name}}</a>
-    let {{page.extra.meetup.date}}
+    {{page.extra.meetup.date | default(value="TBD") }}
     </p>
     {{page.extra.host.place|safe}}
 </div>
