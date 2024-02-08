@@ -2,7 +2,7 @@
 
 {% block content %}
 <section id="hero" class="max-width-md">
-    <h1 class="text-center">Venez explorer l'univers Rust avec nous</h1>
+    <h1 class="text-center">Explorez l'univers Rust avec nous</h1>
     <p class="text-medium text-center">
     Rust Lille est une association dédiée à l’animation de la
     communauté Rust autour de la métropole Lilloise. Nous
@@ -16,11 +16,18 @@
 <section id="events" class="anchor text-center">
     <h2>Évènements à venir</h2>
     <div id="event-carousel">
+        {% set events = events.pages | length %}
+        {% if events > 0 %}
         <div>
             {% for event in events.pages %}
             {% include "partials/event.html" %}
             {% endfor %}
         </div>
+        {% else %}
+        <div class="card">
+        <p>On est encore en train de préparer notre prochain évènement ! Stay tuned !
+        </div>
+        {% endif %}
     </div>
 </section>
 

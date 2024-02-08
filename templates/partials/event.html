@@ -7,14 +7,7 @@
     {% endif %}
 
     <p>{{ event.description | safe }}</p>
-    {#
-    <a href="{{event.permalink}}">
-        En savoir plus...
-    </a>
-    #}
-    {% if event.extra.meetup %}
     <div class="text-center">
         <a target="_blank" href="{{event.extra.meetup.link}}" class="button">Réserver une place</a>
     </div>
-    {% endif %}
 </div>
