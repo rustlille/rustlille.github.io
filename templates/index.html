@@ -15,19 +15,37 @@
 
 <section id="events" class="text-center">
     <h2>Évènements à venir</h2>
+    {% set events = events.pages | length %}
+    {% if events > 0 %}
     <div id="event-carousel">
-        {% set events = events.pages | length %}
-        {% if events > 0 %}
         <div>
             {% for event in events.pages %}
             {% include "partials/event.html" %}
             {% endfor %}
         </div>
-        {% else %}
-        <div class="card">
-        <p>On est encore en train de préparer notre prochain évènement ! Stay tuned !
-        </div>
-        {% endif %}
+    </div>
+    {% else %}
+    <p>On est encore en train de préparer notre prochain évènement ! Stay tuned !
+    {% endif %}
+</section>
+
+<section id="sponsors" class="text-center max-width-md">
+    <h2>Sponsors</h2>
+    <div class="card">
+        <p>
+        Faire un don à l'association Rust Lille, c'est nous permettre de continuer
+        à vous organiser des évènement toujours plus qualitatifs ! <br />
+        Vos dons sont utilisés pour l'organisation des activités de l'association:
+        <br /><br />
+        Apéritifs<br />
+        Frais de déplacement des speakers<br />
+        Location de locaux<br />
+        Goodies (stickers,….)<br />
+        <br /><br />
+        Les membres de Rust Lille sont bénévoles et ne sont pas rémunérés.<br />
+        Si vous souhaitez nous aider, vous pouvez faire un don à l'association en suivant ce lien:
+        </p>
+        <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/rust-lille/formulaires/1/widget-bouton" style="width: 100%; height: 70px; border: none;"></iframe>
     </div>
 </section>
 
@@ -47,13 +65,6 @@
             <a class="button" href="https://twitter.com/@rustlille" target="_blank">@rustlille</a>
         </div>
     </div>
-</section>
-
-<section id="about" class="text-center max-width-md">
-    <h2>À propos</h2>
-    Rust Lille est une association de loi 1901 dont le but est de promovoir le
-    langage Rust et la programmation logicielle à travers l'organisation de
-    talks et de workshops dans la métropole Lilloise
 </section>
 {% endblock content %}
 
