@@ -11,7 +11,6 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: var(--bg-color);
-    overflow: hidden;
 }
 h1 {
     font-size: 2rem;
@@ -47,8 +46,6 @@ button {
     cursor: pointer;
 }
 main {
-    height: calc(100vh - var(--header-height));
-    overflow: auto;
     > section {
         margin-top: 3rem;
         padding: 0 1rem;
@@ -89,7 +86,7 @@ footer {
     box-sizing: border-box;
 
     &:hover {
-        filter: brightness(85%);
+        filter: brightness(115%);
         box-shadow: 0 0 8px 0 rgba(0,0,0,0.3);
     }
 }
