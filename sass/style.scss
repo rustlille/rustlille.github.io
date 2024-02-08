@@ -16,11 +16,9 @@
     overflow: auto;
 
     .event {
-        img {
-            margin: 0;
-            max-width: 100%;
+        .button {
+            margin-top: 1rem;
         }
-
     }
 
     @include breakpoint-medium {
@@ -57,7 +55,7 @@
         margin: 1rem;
 
         h3 {
-            margin-bottom: 0.2em;
+            margin: 1rem 0;
         }
         > p {
             flex: 1;
