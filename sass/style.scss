@@ -27,13 +27,14 @@
         }
         .event {
             width: 400px;
-            height: 500px;
+            min-height: 500px;
         }
     }
 }
 #event-carousel, #contact {
     text-align: center;
     word-break: break-all;
+    white-space: normal;
 
     .card {
         max-width: 90vw;

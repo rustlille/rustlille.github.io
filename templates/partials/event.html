@@ -1,7 +1,7 @@
 <div class="card event">
     <h3>{{event.title}}</h3>
-    <p class="date">{{event.meetup.date | default(value="TBD") }}</p>
-    <p class="address">{{event.meetup.address | default(value="TBD") }}</p>
+    <p class="date">{{event.extra.meetup.date | default(value="TBD") }}</p>
+    <p class="address">{{event.extra.meetup.address | default(value="TBD") }}</p>
     {% if event.extra.splash %}
     <img alt="event thumbnail image" src="{{event.extra.splash}}"/>
     {% endif %}
